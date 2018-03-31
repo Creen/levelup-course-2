@@ -2,9 +2,12 @@ package ru.levelup.Lesson03.Homework;
 
 public class List<T>  {
 
+    private ListNode head; // указатель на первый элемент
+    private ListNode tail; // указатель на последний элемент
 
     //Добавляет элемент на вершину стека.
     public void push (T valeo){
+
 
     }
     //Удаляет элемент с вершины стека и возвращает его. Если стек пустой, кидает InvalidOperationException.
