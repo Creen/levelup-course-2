@@ -1,6 +1,6 @@
 package ru.levelup.Lesson03.Homework;
 
-public class StackLinkedList<T>  {
+public class List<T>  {
 
 
 
