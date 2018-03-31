@@ -14,17 +14,14 @@ public class List<T>  {
         //Указатель на следующий слемент
         StackElement next;
 
-        public StackElement() {
-
-        }
         StackElement(T value) {
             this.value = value;
         }
     }
 
     //Добавляет элемент на вершину стека.
-    public void push (T valeo){
-            StackElement stackElement = new StackElement();
+    public void push (T value){
+            StackElement stackElement = new StackElement(value);
             if(head == null){ //если список пуст
                 head = stackElement; //то указываем ссылку начала на новый элемент
         }  else {
