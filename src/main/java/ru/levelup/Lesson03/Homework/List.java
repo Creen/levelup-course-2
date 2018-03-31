@@ -34,15 +34,20 @@ public class List<T>  {
         if(head == null){
             throw new EmptyStackException();
         } else {
-            T value = (T) head.value;
-            head = head.next;
+            T value = (T) head.value; //записываем данные о верхнем элементе
+            head = head.next; //переход на следующий элемент, который нул
             return value;
         }
 
     }
     //Возвращает верхний элемент стека, но не удаляет его.
     public T peek() {
-
+        if(head == null){
+            throw new EmptyStackException();
+        } else {
+            T value = (T) head.value; //записываем данные о верхнем элементе
+            return value;
+        }
     }
 
 
