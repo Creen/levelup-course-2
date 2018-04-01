@@ -42,6 +42,7 @@ public class List<T>  {
     }
     //Удаляет элемент с вершины стека и возвращает его.
     public T pop(){
+        count--;
         if(head == null){
             throw new EmptyStackException();
         } else {
