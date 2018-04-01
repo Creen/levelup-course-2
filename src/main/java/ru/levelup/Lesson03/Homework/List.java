@@ -42,12 +42,13 @@ public class List<T>  {
     }
     //Удаляет элемент с вершины стека и возвращает его.
     public T pop(){
-        count--;
+
         if(head == null){
             throw new EmptyStackException();
         } else {
             T value = (T) head.value; //записываем данные о верхнем элементе
             head = head.next; //переназначим указатель на голову на второй элемент списка, а голову удалим
+            count--;
             return value;
         }
 
