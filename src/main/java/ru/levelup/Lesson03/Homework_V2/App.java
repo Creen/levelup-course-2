@@ -7,8 +7,11 @@ public class App {
         oneLinkedListStack.push("1");
         oneLinkedListStack.push("2");
         oneLinkedListStack.push("3");
+        oneLinkedListStack.push("3");
 
 
+        System.out.println(oneLinkedListStack.peek());
+        System.out.println(oneLinkedListStack.peek());
         System.out.println(oneLinkedListStack.peek());
 
     }

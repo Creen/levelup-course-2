@@ -6,15 +6,17 @@ import java.util.EmptyStackException;
 //Класс с реализацией базовых операций стека. Внутри себя использует OneLinkedList<T> для манипуляции данными.
 class OneLinkedListStack<T> {
 
-    public int size;
+    int size;
+
     public OneLinkedListStack(int size){
+//        oneLinkedList.size = size;
         this.size = size;
     }
     public OneLinkedListStack(){
 
     }
 
-    public OneLinkedList<T> oneLinkedList = new OneLinkedList<T>(size);
+    public OneLinkedList<T> oneLinkedList = new OneLinkedList<T>();
 
     public void push(T date){
         oneLinkedList.addFirst(date);
@@ -32,16 +34,14 @@ class OneLinkedListStack<T> {
 //Реализация односвязного списка
 class OneLinkedList<T>  {
 
-    private NodeOLL<T> first = null; // указатель на первый элемент
+    private NodeOLL<T> first; // указатель на первый элемент
     public int size; //размер списка
-    public int count;
+    public int count; //счетчик для размера
 
-    //Конструктор для указания размерности
+    //Конструкторы пусто и для указания размерности
+    public OneLinkedList(){}
     public OneLinkedList(int size) {
         this.size = size;
-    }
-    public OneLinkedList(){
-
     }
 
     //Внутренний класс, который представляет собой элемент списка
@@ -60,19 +60,21 @@ class OneLinkedList<T>  {
         NodeOLL<T> newFirst = new NodeOLL<T>(data);
         if (size == count){
             throw new StackOverflowError();
+        } else if(first == null) { //если список пуст
+            first = newFirst; //то указываем ссылку начала на новый элемент
         } else {
             newFirst.next = first;
             first = newFirst;
+            count++;
         }
-        count++;
     }
 
     //Для метода pop(), который удаляет элемент с вершины стека и возвращает его.
     public T removeFirst(){
-        NodeOLL<T> oldFirst = first;
-        if(isEmpty()){
+        if(first == null){
             throw new EmptyStackException();
         } else {
+            NodeOLL<T> oldFirst = first;
             first = first.next;
             count--;
             return oldFirst.data;
@@ -81,16 +83,14 @@ class OneLinkedList<T>  {
 
     //Для метода peek(), который возвращает верхний элемент стека, но не удаляет его.
     public T returnFirst (){
-        if(isEmpty()){
+        if(first == null){
             throw new EmptyStackException();
         } else {
             return (T) first;
         }
     }
 
-    public boolean isEmpty(){
-        return first == null;
-    }
+
 
 }
 
