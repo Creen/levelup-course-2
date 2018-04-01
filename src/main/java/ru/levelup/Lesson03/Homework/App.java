@@ -3,7 +3,7 @@ package ru.levelup.Lesson03.Homework;
 public class App {
 
     public static void main(String[] args) {
-        List<String> stack = new List<>(5);
+        OneLinkedList<String> stack = new OneLinkedList<>(10);
         stack.push("JavaLove");
         stack.push("JavaLove2");
         stack.push("JavaLove3");

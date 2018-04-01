@@ -16,10 +16,10 @@ import java.util.Random;
 public class AllObjects {
 
     public Object[] getObjects(String basePackage) throws IllegalAccessException, InstantiationException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException {
-//        List<Class> classes = new ArrayList<>();
-//        List<Object> classes = new ArrayList<>();
+//        OneLinkedList<Class> classes = new ArrayList<>();
+//        OneLinkedList<Object> classes = new ArrayList<>();
         Object[] instanceObj = new Object[15];
-//        List objectdd = (List) new Object();
+//        OneLinkedList objectdd = (OneLinkedList) new Object();
         //Создадим объект File для данного каталога
         File filePackage = new File("src\\main\\java\\" + basePackage.replace(".", "\\"));
         //Список всех файлов в каталоге

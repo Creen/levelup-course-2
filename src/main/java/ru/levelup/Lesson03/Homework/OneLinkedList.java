@@ -2,33 +2,35 @@ package ru.levelup.Lesson03.Homework;
 
 import java.util.EmptyStackException;
 
-public class List<T>  {
+//Реализация односвязного списка
+public class OneLinkedList<T>  {
 
-    private StackElement head; // указатель на первый элемент
+    private NodeOLL head; // указатель на первый элемент
     private int size; //размер списка
     private int count; // счетик
 
     //Конструктор для указания размерности
-    public List(int size) {
+    public OneLinkedList(int size) {
         this.size = size;
     }
+    public OneLinkedList(){
 
-    //singly-linked list
-    public class StackElement <T>{
+    }
+
+    //нутренний класс, который представляет собой элемент списка
+    public class NodeOLL <T>{
         //Данные
         T value;
-
         //Указатель на следующий слемент
-        StackElement next;
-
-        StackElement(T value) {
+        NodeOLL next;
+        NodeOLL(T value) {
             this.value = value;
         }
     }
 
     //Добавляет элемент на вершину стека.
     public void push (T value){
-            StackElement stackElement = new StackElement(value);
+            NodeOLL stackElement = new NodeOLL(value);
         if (size == count){
             throw new StackOverflowError();
         } else if(head == null){ //если список пуст
@@ -62,10 +64,6 @@ public class List<T>  {
             return value;
         }
     }
-
-
-
-
 }
 
 
