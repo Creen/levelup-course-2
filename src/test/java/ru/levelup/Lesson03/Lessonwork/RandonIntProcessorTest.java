@@ -18,7 +18,7 @@ public class RandonIntProcessorTest {
     //1. Запускается перед каждым тестом (тестовый метод)
     public void setup(){
         this.processor = new RandomIntProcessor();
-        System.out.println("Setap");
+        System.out.println("Setup");
     }
 
 
