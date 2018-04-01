@@ -34,7 +34,7 @@ class OneLinkedListStack<T> {
 //Реализация односвязного списка
 class OneLinkedList<T>  {
 
-    private NodeOLL<T> first; // указатель на первый элемент
+    public NodeOLL<T> first; // указатель на первый элемент
     public int size; //размер списка
     public int count; //счетчик для размера
 
@@ -57,16 +57,15 @@ class OneLinkedList<T>  {
 
     //Для метода push(), который добавляет элемент на вершину
     public void addFirst(T data){
-        NodeOLL<T> newFirst = new NodeOLL<T>(data);
-        if (size == count){
-            throw new StackOverflowError();
-        } else if(first == null) { //если список пуст
-            first = newFirst; //то указываем ссылку начала на новый элемент
-        } else {
+//        if (size == count) {
+//            throw new StackOverflowError();
+//        } else {
+            NodeOLL<T> newFirst = new NodeOLL<T>(data);
             newFirst.next = first;
             first = newFirst;
             count++;
-        }
+//        }
+
     }
 
     //Для метода pop(), который удаляет элемент с вершины стека и возвращает его.
@@ -86,7 +85,8 @@ class OneLinkedList<T>  {
         if(first == null){
             throw new EmptyStackException();
         } else {
-            return (T) first;
+            NodeOLL<T> thisFirst = first;
+            return thisFirst.data;
         }
     }
 
