@@ -80,7 +80,7 @@ class OneLinkedList<T>  {
 
     //Для метода pop(), который удаляет элемент с вершины стека и возвращает его.
     public T removeFirst(){
-        if(first == null){
+        if(isEmpty()){
             throw new EmptyStackException();
         } else {
             NodeOLL<T> oldFirst = first;
@@ -92,7 +92,7 @@ class OneLinkedList<T>  {
 
     //Для метода peek(), который возвращает верхний элемент стека, но не удаляет его.
     public T returnFirst (){
-        if(first == null){
+        if(isEmpty()){
             throw new EmptyStackException();
         } else {
             NodeOLL<T> thisFirst = first;
@@ -102,6 +102,10 @@ class OneLinkedList<T>  {
 
     public boolean isEmpty(){ //--> false
         return first == null; //
+    }
+
+    public boolean isFull(){
+        return size == count;
     }
 }
 
