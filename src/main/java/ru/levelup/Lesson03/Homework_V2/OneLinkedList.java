@@ -29,12 +29,23 @@ class OneLinkedListStack<T> {
     public T peek(){
        return oneLinkedList.returnFirst();
     }
+
+    public boolean isEmpty(){
+        return oneLinkedList.isEmpty();
+    }
+
+    public void print(OneLinkedListStack oneLinkedListStack){
+        while (!oneLinkedListStack.isEmpty()){
+            T val = (T) oneLinkedListStack.pop();
+            System.out.println(val + " ");
+        }
+    }
 }
 
 //Реализация односвязного списка
 class OneLinkedList<T>  {
 
-    public NodeOLL<T> first; // указатель на первый элемент
+    public NodeOLL<T> first = null; // указатель на первый элемент
     public int size; //размер списка
     public int count; //счетчик для размера
 
@@ -65,7 +76,6 @@ class OneLinkedList<T>  {
             first = newFirst;
             count++;
 //        }
-
     }
 
     //Для метода pop(), который удаляет элемент с вершины стека и возвращает его.
@@ -90,8 +100,9 @@ class OneLinkedList<T>  {
         }
     }
 
-
-
+    public boolean isEmpty(){ //--> false
+        return first == null; //
+    }
 }
 
 
