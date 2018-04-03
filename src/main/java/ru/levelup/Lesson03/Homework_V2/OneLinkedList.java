@@ -9,7 +9,6 @@ class OneLinkedListStack<T> {
     int size;
 
     public OneLinkedListStack(int size){
-//        oneLinkedList.size = size;
         this.size = size;
     }
     public OneLinkedListStack(){
@@ -69,14 +68,14 @@ class OneLinkedList<T>  {
 
     //Для метода push(), который добавляет элемент на вершину
     public void addFirst(T data){
-//        if (size == count) {
-//            throw new StackOverflowError();
-//        } else {
+        if (size > count) {
+            throw new StackOverflowError();
+        } else {
             NodeOLL<T> newFirst = new NodeOLL<T>(data);
             newFirst.next = first;
             first = newFirst;
             count++;
-//        }
+        }
     }
 
     //Для метода pop(), который удаляет элемент с вершины стека и возвращает его.

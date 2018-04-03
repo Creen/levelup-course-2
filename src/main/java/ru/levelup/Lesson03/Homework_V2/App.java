@@ -9,7 +9,7 @@ public class App {
         oneLinkedListStack.push("2");
         oneLinkedListStack.push("5");
         oneLinkedListStack.push("6");
-        oneLinkedListStack.push("7");
+
 
         oneLinkedListStack.print(oneLinkedListStack);
     }
