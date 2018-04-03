@@ -23,4 +23,5 @@ public class TestOneLinkedListStack {
         oneLinkedListStack.push(3);
         Assertions.assertEquals(3, (int)oneLinkedListStack.peek());
     }
+
 }

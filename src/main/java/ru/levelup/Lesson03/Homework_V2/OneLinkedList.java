@@ -40,6 +40,7 @@ class OneLinkedListStack<T> {
             System.out.println(val + " ");
         }
     }
+
 }
 
 //Реализация односвязного списка

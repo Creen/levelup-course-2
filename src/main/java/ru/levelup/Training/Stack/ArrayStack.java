@@ -4,7 +4,7 @@ public class ArrayStack {
 
     private int mSize;
     private int [] stackArray;
-    private int top = -1;
+    private int top;
 
     public ArrayStack(int m){
         this.mSize = m;
