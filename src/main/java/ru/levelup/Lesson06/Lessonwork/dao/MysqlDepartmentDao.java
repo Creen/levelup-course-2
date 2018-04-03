@@ -14,13 +14,13 @@ public class MysqlDepartmentDao implements DepartmentDao {
                 "rood"
         )) {
             //insert into department value (id, name, city)
-            String sql = "insert into department value(" + id + "," + name + ", " + city + ", " + ")";
+            String sql = "insert into department value(" + id +
+                    ", " + name + ", " + city  + ")";
             Statement statement = connection.createStatement();
             int result = statement.executeUpdate(sql);
             System.out.println("Row affected: " + result);
 
             //TODO: get department
-
         }
         return null;
     }

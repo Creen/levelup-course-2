@@ -6,6 +6,7 @@ public class Connect {
 
     static {
         try {
+            System.out.println("Registering JDBC driver...");
             Class.forName("com.mysql.cj.jdbc.Driver");
 
         } catch (ClassNotFoundException e) {
@@ -15,18 +16,21 @@ public class Connect {
 
     public static void main(String[] args) {
 //?createDatabaseIfNotExists=true
+        System.out.println("Creating connection to database...");
+        System.out.println("Creating table in selected database...");
         try (Connection connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/employees?createDatabaseIfNotExists=true&serverTimezone=UTC",
                 "root",
                 "rood"
         );
+//             System.out.println("Creating table in selected database...");
             Statement statement = connection.createStatement()
-
 
         ) {
 
+            String sql = "select * from employee";
            ResultSet resultSet =
-                   statement.executeQuery("select * from employee");
+                   statement.executeQuery(sql);
            while (resultSet.next()){
                int employeeId = resultSet.getInt("id");
                String login = resultSet.getString("login");
@@ -37,7 +41,11 @@ public class Connect {
                System.out.println("employeeId " + employeeId + " login " + login + " name " + name +
                                     " last_name " + last_name + " email "+ email + " department_id "+ departmentId);
            }
+           statement.executeUpdate(sql);
+           System.out.println("Table successfully created...");
 
+           statement.close();
+           connection.close();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -45,18 +53,6 @@ public class Connect {
     }
 }
 
-//        String URL = "jdbc:mysql://localhost:3306/";
-//        String USER = "root";
-//        String PASSWORD = "rood";
-//
-//        try {
-//            Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-//            connection.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-
-//    }
 
 
 
