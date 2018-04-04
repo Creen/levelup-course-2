@@ -8,7 +8,16 @@ public class Configuration {
     private String jdbcUsername;
     private String jdbcPassword;
 
+    public String getJdbcPassword() {
+        return jdbcPassword;
+    }
+
+    public void setJdbcPassword(String jdbcPassword) {
+        this.jdbcPassword = jdbcPassword;
+    }
+
     public String getJdbcDatabaseName() {
+
         return jdbcDatabaseName;
     }
 
@@ -39,16 +48,5 @@ public class Configuration {
     public void setJdbcUsername(String jdbcUsername) {
         this.jdbcUsername = jdbcUsername;
     }
-
-    public String getJdbcPassword() {
-        return jdbcPassword;
-    }
-
-    public void setJdbcPassword(String jdbcPassword) {
-        this.jdbcPassword = jdbcPassword;
-    }
-
-
-
 
 }
