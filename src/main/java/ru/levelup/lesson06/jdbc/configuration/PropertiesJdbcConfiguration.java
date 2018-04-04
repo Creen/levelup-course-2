@@ -17,11 +17,11 @@ public class PropertiesJdbcConfiguration implements JdbcConfiguration {
         fileInputStream = new FileInputStream(TRACK_TO_PROPERTIES);
         properties.load(fileInputStream);
 
-        String jdbcDatabaseName = properties.getProperty("jdbc.database.name");
-        String jdbcHost = properties.getProperty("jdbc.host");
-        String jdbcPort = properties.getProperty("jdbc.port");
-        String jdbcUsername = properties.getProperty("jdbc.username");
-        String jdbcPassword = properties.getProperty("jdbc.password");
+        String jdbcDatabaseName = properties.setProperty("jdbc.database.name");
+        String jdbcHost = properties.setProperty("jdbc.host");
+        String jdbcPort = properties.setProperty("jdbc.port");
+        String jdbcUsername = properties.setProperty("jdbc.username");
+        String jdbcPassword = properties.setProperty("jdbc.password");
 
         return configuration;
     }
