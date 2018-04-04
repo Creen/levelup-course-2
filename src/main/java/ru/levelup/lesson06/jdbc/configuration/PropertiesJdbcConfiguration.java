@@ -1,9 +1,7 @@
 package ru.levelup.lesson06.jdbc.configuration;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Properties;
 
 public class PropertiesJdbcConfiguration implements JdbcConfiguration {
 
@@ -12,19 +10,19 @@ public class PropertiesJdbcConfiguration implements JdbcConfiguration {
 
     @Override
     public Configuration load() throws IOException{
-        Configuration configuration = new Configuration();
+        Configuration configuration = null;
+        FileInputStream fileInputStream;
+        Properties properties = null;
 
-        BufferedReader br = new BufferedReader(new FileReader(TRACK_TO_PROPERTIES));
-        String line = br.readLine();
-        String [] split;
-        while (line != null){
-            split = line.split("=");
+        fileInputStream = new FileInputStream(TRACK_TO_PROPERTIES);
+        properties.load(fileInputStream);
 
-        }
+        String jdbcDatabaseName = properties.getProperty("jdbc.database.name");
+        String jdbcHost = properties.getProperty("jdbc.host");
+        String jdbcPort = properties.getProperty("jdbc.port");
+        String jdbcUsername = properties.getProperty("jdbc.username");
+        String jdbcPassword = properties.getProperty("jdbc.password");
 
-
-
-
-        return null;
+        return configuration;
     }
 }

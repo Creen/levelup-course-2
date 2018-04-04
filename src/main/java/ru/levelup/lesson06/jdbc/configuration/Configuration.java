@@ -6,6 +6,7 @@ public class Configuration {
     private String jdbcHost;
     private String jdbcPort;
     private String jdbcUsername;
+    private String jdbcPassword;
 
     public String getJdbcDatabaseName() {
         return jdbcDatabaseName;
@@ -47,7 +48,7 @@ public class Configuration {
         this.jdbcPassword = jdbcPassword;
     }
 
-    private String jdbcPassword;
+
 
 
 }
