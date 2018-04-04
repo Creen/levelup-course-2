@@ -6,13 +6,16 @@ import java.sql.*;
 import java.util.Collection;
 
 public class MysqlDepartmentDao implements DepartmentDao {
+
+    private Connection connection;
+
+    public MysqlDepartmentDao(Connection connection) {
+        this.connection = connection;
+    }
+
     @Override
     public DepartmentDao create(int id, String name, String city) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/employees?createDatabaseIfNotExists=true&serverTimezone=UTC",
-                "root",
-                "rood"
-        )) {
+        try {
             //insert into department value (id, name, city)
             String sql = "insert into department value(" + id +
                     ", " + name + ", " + city  + ")";

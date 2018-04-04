@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="course2" />
         <module name="Lesson03" />
         <module name="ru.levelup" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="course2" target="1.8" />
       <module name="ru.levelup" target="1.8" />
     </bytecodeTargetLevel>
   </component>
