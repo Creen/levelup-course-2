@@ -11,13 +11,20 @@ import java.util.Properties;
 
 public class Connect {
 
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     //Указываю путь к пропиртиес и записываю в переменную. Вроде по фен шую.
     public static final String TRACK_TO_PROPERTIES = "src/main/resources/config.properties";
 
     public static void main(String[] args) {
 
         Connection connection;
-        Statement statement;
 
         FileInputStream fileInputStream;
         Properties properties = new Properties();
