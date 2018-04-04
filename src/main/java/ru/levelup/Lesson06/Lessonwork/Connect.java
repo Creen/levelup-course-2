@@ -1,9 +1,13 @@
 package ru.levelup.Lesson06.Lessonwork;
 
+
+import ru.levelup.Lesson06.Lessonwork.dao.MysqlDepartmentDao;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
+
 
 public class Connect {
 
@@ -27,25 +31,12 @@ public class Connect {
             String password = properties.getProperty("password");
 
             connection = DriverManager.getConnection(nameDatabase, username, password);
-            statement = connection.createStatement();
+            MysqlDepartmentDao myDao = new MysqlDepartmentDao(connection);
+            myDao.create(1, "Poland", "Varshava");
 
-            String sql = "select * from employee";
-            ResultSet resultSet = statement.executeQuery(sql);
-           while (resultSet.next()){
-               int employeeId = resultSet.getInt("id");
-               String login = resultSet.getString("login");
-               String name = resultSet.getString("name");
-               String last_name = resultSet.getString("last_name");
-               String email = resultSet.getString("email");
-               int departmentId = resultSet.getInt("department_id");
-               System.out.println("employeeId " + employeeId + " login " + login + " name " + name +
-                                    " last_name " + last_name + " email "+ email + " department_id "+ departmentId);
-           }
 
-           statement.executeUpdate(sql);
-
-           statement.close();
-           connection.close();
+//           statement.close();
+//           connection.close();
 
         } catch (IOException | SQLException e) {
             e.printStackTrace();

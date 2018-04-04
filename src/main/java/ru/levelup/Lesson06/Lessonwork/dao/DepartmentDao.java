@@ -8,15 +8,16 @@ import java.util.Collection;
 public interface DepartmentDao {
 
     //insert
-    DepartmentDao create(int id, String name, String city) throws SQLException;
+    Department create(int id, String name, String city) throws SQLException;
 
     //update
-    DepartmentDao update(int id, String name, String city);
+    Department update(int id, String name, String city);
 
     //delete
     void delete(int id);
 
     //select * from department
+    //Возвращем коллекцию, переведем ResultSet в Department
     Collection<Department> findAll();
 
     Department findById(int id);

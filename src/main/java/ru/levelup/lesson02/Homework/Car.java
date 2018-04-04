@@ -1,4 +1,4 @@
-package ru.levelup.Lesson02.Homework;
+package ru.levelup.lesson02.Homework;
 
 public class Car {
 

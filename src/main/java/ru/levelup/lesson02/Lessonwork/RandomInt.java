@@ -1,4 +1,4 @@
-package ru.levelup.Lesson02.Homework;
+package ru.levelup.lesson02.Lessonwork;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,6 +9,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RandomInt {
 
-    int min() default 1;
-    int max() default 120;
+    //Аннотация хранит значения мин и макс
+    //Метод у которого нет тела, с дефорлтным знач.
+    int min();
+
+    int max() default 100;
+
 }

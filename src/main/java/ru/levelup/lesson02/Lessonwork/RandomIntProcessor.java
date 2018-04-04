@@ -1,4 +1,4 @@
-package ru.levelup.Lesson02.Lessonwork;
+package ru.levelup.lesson02.Lessonwork;
 
 import java.lang.reflect.Field;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package ru.levelup.Lesson02.Homework;
+package ru.levelup.lesson02.Homework;
 /*
 Он возвращает объекты классов, которые находятся в данном пакете (параметр basePackage – название пакета, например, ru.levelup.lesson3).
 В этом пакете находятся классы, у которых есть поля. К примеру, User или Monitor.
