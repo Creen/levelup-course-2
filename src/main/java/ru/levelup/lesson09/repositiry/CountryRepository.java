@@ -8,7 +8,7 @@ public interface CountryRepository {
 
     Country delete(String name);
 
-    Country updata(String name, String capital, double population);
+    Country update(String name, String capital, double population);
 
 
 }

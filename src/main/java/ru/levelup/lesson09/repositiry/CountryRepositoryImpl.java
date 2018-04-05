@@ -36,7 +36,7 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public Country updata(String name, String capital, double population) {
+    public Country update(String name, String capital, double population) {
         return null;
     }
 }
