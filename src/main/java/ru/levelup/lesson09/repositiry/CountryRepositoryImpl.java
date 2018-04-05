@@ -47,14 +47,14 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public Country update(String name, String capital, double population) {
+    public Country update(int id, String name, String capital, double population) {
         Session session = factory.openSession();
         Transaction transaction = session.getTransaction();
 
         Country country = session.get(Country.class, id);
         country.setName(name);
         country.setCapital(capital);
-        country.getPopulation();
+        country.setPopulation(population);
         session.update(country);
 
         transaction.commit();
