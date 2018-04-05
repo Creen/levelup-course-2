@@ -7,7 +7,9 @@ import ru.levelup.lesson09.domain.Country;
 
 public class CountryRepositoryImpl implements CountryRepository {
 
-    private final SessionFactory factory;
+    private final SessionFactory factory = null;
+    private Session session = factory.openSession();
+    private Transaction transaction = null;
 
     public CountryRepositoryImpl(SessionFactory factory) {
         this.factory = factory;
@@ -15,8 +17,8 @@ public class CountryRepositoryImpl implements CountryRepository {
 
     @Override
     public Country create(String name, String capital, double population) {
-        Session session = factory.openSession();
-        Transaction transaction = session.beginTransaction();
+//        Session session = factory.openSession();
+        transaction = session.beginTransaction();
 
         Country country = new Country();
         country.setName(name);
@@ -32,6 +34,8 @@ public class CountryRepositoryImpl implements CountryRepository {
 
     @Override
     public Country delete(String name) {
+        transaction = session.beginTransaction();
+        int deleteRow = transaction.
         return null;
     }
 
