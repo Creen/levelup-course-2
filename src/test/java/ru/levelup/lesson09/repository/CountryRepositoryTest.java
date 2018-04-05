@@ -56,5 +56,10 @@ public class CountryRepositoryTest {
 
     }
 
+    @Test
+    public void testDelete_Id(){
+        Country country = repository.delete();
+    }
+
 
 }

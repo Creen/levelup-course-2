@@ -33,7 +33,7 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public Country delete(int id) {
+    public void delete(int id) {
         Session session = factory.openSession();
         Transaction transaction = session.getTransaction();
 
@@ -42,8 +42,6 @@ public class CountryRepositoryImpl implements CountryRepository {
 
         transaction.commit();
         session.close();
-
-        return null;
     }
 
     @Override
@@ -59,6 +57,6 @@ public class CountryRepositoryImpl implements CountryRepository {
 
         transaction.commit();
         session.close();
-        return null;
+        return country;
     }
 }
