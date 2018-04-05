@@ -6,7 +6,7 @@ public interface CountryRepository {
 
     Country create(String name, String capital, double population);
 
-    Country delete(String name);
+    Country delete(int id);
 
     Country update(String name, String capital, double population);
 

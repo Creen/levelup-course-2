@@ -7,9 +7,8 @@ import ru.levelup.lesson09.domain.Country;
 
 public class CountryRepositoryImpl implements CountryRepository {
 
-    private final SessionFactory factory = null;
-    private Session session = factory.openSession();
-    private Transaction transaction = null;
+    private final SessionFactory factory;
+
 
     public CountryRepositoryImpl(SessionFactory factory) {
         this.factory = factory;
@@ -17,8 +16,9 @@ public class CountryRepositoryImpl implements CountryRepository {
 
     @Override
     public Country create(String name, String capital, double population) {
-//        Session session = factory.openSession();
-        transaction = session.beginTransaction();
+        Session session = factory.openSession();
+//        Transaction beginTransaction() начичинает транзакцию и возвращает объект Transaction.
+        Transaction transaction = session.beginTransaction();
 
         Country country = new Country();
         country.setName(name);
@@ -33,14 +33,32 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public Country delete(String name) {
-        transaction = session.beginTransaction();
-        int deleteRow = transaction.
+    public Country delete(int id) {
+        Session session = factory.openSession();
+        Transaction transaction = session.getTransaction();
+
+        Country country = session.get(Country.class, id);
+        session.delete(country);
+
+        transaction.commit();
+        session.close();
+
         return null;
     }
 
     @Override
     public Country update(String name, String capital, double population) {
+        Session session = factory.openSession();
+        Transaction transaction = session.getTransaction();
+
+        Country country = session.get(Country.class, id);
+        country.setName(name);
+        country.setCapital(capital);
+        country.getPopulation();
+        session.update(country);
+
+        transaction.commit();
+        session.close();
         return null;
     }
 }
