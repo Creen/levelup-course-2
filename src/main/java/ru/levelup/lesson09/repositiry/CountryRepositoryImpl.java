@@ -29,4 +29,14 @@ public class CountryRepositoryImpl implements CountryRepository {
 
         return country;
     }
+
+    @Override
+    public Country delete(String name) {
+        return null;
+    }
+
+    @Override
+    public Country updata(String name, String capital, double population) {
+        return null;
+    }
 }
