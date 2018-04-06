@@ -49,7 +49,7 @@ public class CountryRepositoryTest {
         assertEquals(name, country.getName());
         assertEquals(capital, country.getCapital());
         assertEquals(population, country.getPopulation(), 0.2d);
-
+//      обертка Matchers
         verify(session, times(1)).persist(Matchers.any(Country.class));
         verify(transaction).commit();
         verify(session).close();
@@ -58,8 +58,39 @@ public class CountryRepositoryTest {
 
     @Test
     public void testDelete_Id(){
-        Country country = repository.delete();
+        //Методы do*() применяются для создания заглушек на void методы.
+        //ожидаем true когда repository удалит int
+        when(session.get(Country.class, 1)).thenReturn(new Country());
+        repository.delete(1);
+
+        //Проверяем что session был вызван и у него был вызван get с параметрами
+        verify(session).delete(Matchers.any(Country.class));
+
+        //Если все норм, то  тейс проиден
+
+        verify(transaction).commit();
+        verify(session).close();
     }
 
+    @Test
+    public void teatUpdate(){
+        String name = "Russia2";
+        String capital = "Moscow2";
+        double population = 1000_000_000;
+
+        when(session.get(Country.class, 1)).thenReturn(new Country());
+
+        Country country = repository.update(1, name, capital,population);
+        assertEquals(name, country.getName());
+        assertEquals(capital, country.getCapital());
+        assertEquals(population, country.getPopulation(), 0.2d);
+
+        verify(session).update(Matchers.any(Country.class));
+
+        verify(transaction).commit();
+        verify(session).close();
+
+
+    }
 
 }

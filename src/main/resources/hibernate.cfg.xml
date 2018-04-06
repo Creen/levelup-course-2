@@ -16,7 +16,6 @@
         </property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">rood</property>
-
         <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>

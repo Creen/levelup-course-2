@@ -1,4 +1,4 @@
-package ru.levelup.Lesson07;
+package ru.levelup.lesson07;
 
 import javax.persistence.*;
 import java.io.Serializable;

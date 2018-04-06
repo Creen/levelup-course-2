@@ -1,4 +1,4 @@
-package ru.levelup.Lesson07;
+package ru.levelup.lesson07;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,8 +20,6 @@ public class HibernateExample {
         Transaction transaction = session.beginTransaction();
         Department department = new Department("Dev", "SPb"); // transient
         session.save(department); // persistent
-
-
 
         transaction.commit();
 
