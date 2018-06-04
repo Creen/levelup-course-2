@@ -44,7 +44,4 @@ public class ShakerSort {
         }
     }
 
-    public static void print(int [] arr){
-
-    }
 }
