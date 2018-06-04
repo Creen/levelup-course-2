@@ -1,4 +1,4 @@
-package ru.levelup.training.Stack;
+package ru.levelup.training.stack;
 
 public class ArrayStack {
 

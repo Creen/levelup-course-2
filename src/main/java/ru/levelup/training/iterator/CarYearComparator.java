@@ -1,4 +1,4 @@
-package ru.levelup.training.Iterator;
+package ru.levelup.training.iterator;
 
 import java.util.Comparator;
 

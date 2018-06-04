@@ -1,4 +1,4 @@
-package ru.levelup.training.Iterator;
+package ru.levelup.training.iterator;
 
 public class Car implements Comparable <Car>{
 
